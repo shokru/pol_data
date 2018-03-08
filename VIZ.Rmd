@@ -11,19 +11,17 @@ We refer to the companion paper (*Supervised learning with political data* by Gu
 
 ****************
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
+
 
 ## Data preparation
-```{r prep, results = "hide", message = FALSE, warning = FALSE, echo = TRUE}
+```{r prep, results = "hide", message = FALSE, warning = FALSE}
 library(tidyverse)
 load("anes.RData")    # Import ANES database
 beg <- 1985           # Start date for the sample
 ```
 
 ## Plotting Feelings & Age
-```{r feelings, results = "hide", message = FALSE, warning = FALSE, echo = TRUE}
+```{r feelings, results = "hide", message = FALSE, warning = FALSE}
 feel <- c("Feeling_blacks","Feeling_big_business","Feeling_unions","Feeling_military","Feeling_congress")
 anes_feel <- anes %>% filter(Date > beg) %>%  select(one_of(feel)) %>% gather()
 ggplot(anes_feel, aes(x = value, y = ..density.. , fill = key)) + geom_histogram(bins = 10) + facet_grid(. ~ key)
@@ -31,7 +29,7 @@ ggplot(anes, aes(x = Age)) + geom_histogram(bins = 20)
 ```
 
 ## Representing demographical data
-```{r demo, results = "hide", message = FALSE, warning = FALSE, echo = TRUE}
+```{r demo, results = "hide", message = FALSE, warning = FALSE}
 demo <- c("Gender","Nb_children","Home_ownership")
 # Choosing more variables, e.g.:
 # demo <- c("Gender","Race","Education","Income","Work_status","Nb_children","Home_ownership","Marital_status")
