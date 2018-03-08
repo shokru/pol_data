@@ -1,3 +1,6 @@
+Regression analysis with political data
+=======================================
+
 The following document shows the potential of regression analysis
 applied to political data. The examples are simple illustrations that
 can be generalized to much more ambitious studies.
