@@ -11,6 +11,9 @@ We refer to the companion paper (*Supervised learning with political data* by Gu
 
 ****************
 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
 
 ## Data preparation
 ```{r prep, results = "hide", message = FALSE, warning = FALSE, echo = TRUE}
