@@ -1,8 +1,6 @@
 # Datavisualization with political data
 
-```{r setup, include=FALSE, results = "hide", message = FALSE, warning = FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
+
 
 The following document shows the potential of datavisualization applied to political data. The examples are simple illustrations that can be generalized to much more ambitious studies.  
 
