@@ -1,9 +1,6 @@
----
-title: "Datavisualization with political data"
-output: html_document
----
+# Datavisualization with political data
 
-```{r setup, include=FALSE}
+```{r setup, include=FALSE, results = "hide", message = FALSE, warning = FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
