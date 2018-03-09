@@ -2,9 +2,6 @@ Datavisualization with political data
 ================
 Guillaume Coqueret
 
-Datavisualization with political data
-=====================================
-
 The following document shows the potential of datavisualization applied to political data. The examples are simple illustrations that can be generalized to much more ambitious studies.
 
 We refer to the companion paper (*Supervised learning with political data* by Guillaume Coqueret) for comments on the results below, **as well as for the presentation of the database**.
