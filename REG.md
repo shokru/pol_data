@@ -240,7 +240,7 @@ model %>% compile(
   metrics = c('mean_absolute_error')
 )
 
-ann <- model %>% fit(train_ann, train_label/100, epochs = 40, batch_size = 4, validation_data = list(test_ann, test_label/100))
+ann <- model %>% fit(train_ann, train_label/100, epochs = 30, batch_size = 512, validation_data = list(test_ann, test_label/100))
 plot(ann) # Note: the MAE is divided by 100
 ```
 
