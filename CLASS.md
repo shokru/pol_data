@@ -16,7 +16,7 @@ The script requires a large number of packages. You can copy-paste the line belo
 
 Additionally, the section on neural networks requires the installation of a recent version of Python.
 
-**THE TASK** is to predict the party affiliation based on the following variables: Age, Gender, Education, Income, Church\_attendance, and Feeling\_unions. **TRAINING SET**: 1986-2008, **TESTING SET: 2012-2016**.
+**THE TASK** is to predict the party affiliation based on the following variables: Age, Gender, Education, Income, Church\_attendance, and Feeling\_unions. **TRAINING SET**: 1986-2008, **TESTING SET**: 2012-2016.
 
 Data preparation
 ----------------
@@ -193,7 +193,7 @@ model %>% compile(                        # This provides further details on how
   metrics = c('accuracy')
 )
 
-ann <- model %>% fit(train_ann, train_label, epochs = 30, batch_size = 16, validation_data = list(test_ann, test_label))
+ann <- model %>% fit(train_ann, train_label, epochs = 30, batch_size = 512, validation_data = list(test_ann, test_label))
 plot(ann)
 ```
 
