@@ -32,6 +32,10 @@ ggplot(anes_feel, aes(x = value, y = ..density.. , fill = key)) + geom_histogram
 
 ![](Figures/feelings-1.png)
 
+The distribution is more symmetric for business, compared to military.  
+
+Below, we plot the distribution of ages.
+
 ``` r
 ggplot(anes, aes(x = Age)) + geom_histogram(bins = 20)
 ```
@@ -55,7 +59,7 @@ ggplot(anes_demo, aes(x = value)) + facet_wrap(~ key, scales = "free_x", ncol = 
 Evolution of Party affiliation
 ------------------------------
 
-Note: three years are indeed missing.
+Note: three (midterm) years are indeed missing.
 
 ``` r
 party <- anes %>% filter(Date > 1950) %>% select(Date, Party_simple) %>% group_by(Date, Party_simple) %>% summarise(count = n())
