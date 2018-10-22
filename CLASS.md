@@ -199,4 +199,4 @@ plot(ann)
 
 ![](Figures/class_ann_install-1.png)
 
-**CONCLUSION**: 50% accuracy is a hard ceiling to beat!
+**CONCLUSION**: 50% accuracy is a hard ceiling to beat! Nonetheless, it's better than random or fixed guesses.
