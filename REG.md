@@ -98,7 +98,7 @@ fit <- rpart(Feeling_unions ~ ., data = train, cp = 0.003)
 rpart.plot(fit)
 ```
 
-![](REG_files/figure-markdown_github/regression_trees-1.png)
+![](Figures/regression_trees-1.png)
 
 Sensitivity to the number of leaves:
 
@@ -120,7 +120,7 @@ colnames(df)[2:3] <- c("MAE","nb_leaves")
 ggplot(df,aes(nb_leaves,MAE)) + geom_line() + geom_point() + scale_x_log10() 
 ```
 
-![](REG_files/figure-markdown_github/sensi_trees-1.png)
+![](Figures/sensi_trees-1.png)
 
 Boosted trees
 -------------
@@ -162,7 +162,7 @@ df$eta <- df$eta %>% as.factor()
 ggplot(df,aes(nround, MAE, color=eta)) + geom_line() + geom_point() + ylim(20,25)
 ```
 
-![](REG_files/figure-markdown_github/boosted_trees-1.png)
+![](Figures/boosted_trees-1.png)
 
 Which variables matter most? Let's see:
 
@@ -211,7 +211,7 @@ df$cost <- df$cost %>% as.factor()
 ggplot(df,aes(gamma, MAE, color = cost)) + geom_line() + geom_point() + scale_x_log10()
 ```
 
-![](REG_files/figure-markdown_github/svm_reg-1.png)
+![](Figures/svm_reg-1.png)
 
 Neural networks
 ---------------
@@ -244,6 +244,6 @@ ann <- model %>% fit(train_ann, train_label/100, epochs = 30, batch_size = 512, 
 plot(ann) # Note: the MAE is divided by 100
 ```
 
-![](REG_files/figure-markdown_github/ann_reg-1.png)
+![](Figures/ann_reg-1.png)
 
 **CONCLUSION**: using the training sample average to predict all Feeling\_unions gives an MAE of 22.2. The best we could do here is 19.9, which is only a marginal improvement. Adding more variables (e.g., party affiliation or feelings) can help further reduces the MAE.

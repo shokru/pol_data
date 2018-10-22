@@ -45,7 +45,7 @@ fit <- rpart(Party_simple ~ ., data = train, cp = 0.006)  # Fit the tree
 rpart.plot(fit)                                           # Plot the tree
 ```
 
-![](CLASS_files/figure-markdown_github/class_trees_simple-1.png)
+![](Figures/class_trees_simple-1.png)
 
 ``` r
 pred <- predict(fit, test, type = "vector")           # Vector of predicted values
@@ -74,7 +74,7 @@ colnames(df)[2:3] <- c("acc","nb_leaves")
 ggplot(df,aes(nb_leaves, acc)) + geom_line() + geom_point() + scale_x_log10() 
 ```
 
-![](CLASS_files/figure-markdown_github/class_trees_cp-1.png)
+![](Figures/class_trees_cp-1.png)
 
 Let's see if we can do better with boosted trees!
 
@@ -116,7 +116,7 @@ df$eta <- df$eta %>% as.factor()
 ggplot(df,aes(nround, acc, color=eta)) + geom_line() + geom_point()
 ```
 
-![](CLASS_files/figure-markdown_github/boosted_trees-1.png)
+![](Figures/boosted_trees-1.png)
 
 Below, we show which variables play dominant roles (in explaning/forcasting Party\_simple) for one example of boosted tree.
 
@@ -130,7 +130,7 @@ colnames(importance) <- c("Feature", "Gain")
 ggplot(importance,aes(x=Feature, y=Gain)) + geom_bar(stat = "Identity") 
 ```
 
-![](CLASS_files/figure-markdown_github/class_tree_varimp-1.png)
+![](Figures/class_tree_varimp-1.png)
 
 Support Vector Machines
 -----------------------
@@ -159,7 +159,7 @@ df$kernel <- df$kernel %>% as.factor()
 ggplot(df,aes(cost, acc, color = kernel)) + geom_line() + geom_point() + scale_x_log10()
 ```
 
-![](CLASS_files/figure-markdown_github/class_svm-1.png)
+![](Figures/class_svm-1.png)
 
 Articifial Neural Networks
 --------------------------
@@ -197,6 +197,6 @@ ann <- model %>% fit(train_ann, train_label, epochs = 30, batch_size = 512, vali
 plot(ann)
 ```
 
-![](CLASS_files/figure-markdown_github/class_ann_install-1.png)
+![](Figures/class_ann_install-1.png)
 
 **CONCLUSION**: 50% accuracy is a hard ceiling to beat!

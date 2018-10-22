@@ -30,13 +30,13 @@ anes_feel <- anes %>% filter(Date > beg) %>%  select(one_of(feel)) %>% gather()
 ggplot(anes_feel, aes(x = value, y = ..density.. , fill = key)) + geom_histogram(bins = 10) + facet_grid(. ~ key)
 ```
 
-![](VIZ_files/figure-markdown_github/feelings-1.png)
+![](Figures/feelings-1.png)
 
 ``` r
 ggplot(anes, aes(x = Age)) + geom_histogram(bins = 20)
 ```
 
-![](VIZ_files/figure-markdown_github/feelings-2.png)
+![](Figures/feelings-2.png)
 
 Representing demographical data
 -------------------------------
@@ -50,7 +50,7 @@ anes_demo <- anes %>% filter(Date > beg) %>% select(one_of(demo)) %>% gather()
 ggplot(anes_demo, aes(x = value)) + facet_wrap(~ key, scales = "free_x", ncol = 1) + geom_histogram(stat = "count") 
 ```
 
-![](VIZ_files/figure-markdown_github/demo-1.png)
+![](Figures/demo-1.png)
 
 Evolution of Party affiliation
 ------------------------------
@@ -62,4 +62,4 @@ party <- anes %>% filter(Date > 1950) %>% select(Date, Party_simple) %>% group_b
 ggplot(party, aes(x = Date, y = count, fill = Party_simple)) +  geom_bar(stat="identity", position="fill")
 ```
 
-![](VIZ_files/figure-markdown_github/party_evolution-1.png)
+![](Figures/party_evolution-1.png)
