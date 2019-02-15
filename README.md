@@ -34,8 +34,3 @@ Citations
 ---------
 
 Whenever using this material, please cite the original collector of the data, ANES, and the related paper *[Supervised learning with political data](https://github.com/shokru/pol_data/blob/master/Supervised%20learning%20with%20political%20data.pdf)* by Guillaume Coqueret.
-
-Maintainer
-----------
-
-Any questions / comments / requests can be sent to guillaume.coqueret"at"gmail.com.
